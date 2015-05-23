@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
-
+ruby '2.1.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem "haml-rails", "~> 0.4.0"
+gem 'haml'
+# To use devise
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,7 +24,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+group :production do
+gem 'rails_12factor'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
