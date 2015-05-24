@@ -3,7 +3,7 @@ Meetboard::Application.routes.draw do
 
 
   resources :statuses
-
+  root :to => 'events#index'
 
   devise_for :users
 
