@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2015-05-23
+  private: false
+  finished: false
+
+two:
+  name: MyString
+  description: MyText
+  date: 2015-05-23
+  private: false
+  finished: false
