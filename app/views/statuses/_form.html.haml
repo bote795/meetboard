@@ -1,13 +1,17 @@
-= form_for @status do |f|
+= form_for @status, :html => {:class => "form-horizontal"} do |f|
   - if @status.errors.any?
     #error_explanation
       %h2= "#{pluralize(@status.errors.count, "error")} prohibited this status from being saved:"
       %ul
         - @status.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
+  .form-group
+    .field
+      .col-lg-2.control-label
+        = f.label :name
+      .col-lg-10
+        = f.text_field :name
   .actions
-    = f.submit 'Save'
+    .col-lg-10.col-lg-offset-2
+      = f.button 'Reset', :type =>"reset", :html => {:class =>"btn btn-default" }
+      = f.submit 'Save', :html => {:class => "btn btn-primary"}
