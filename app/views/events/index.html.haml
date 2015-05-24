@@ -1,7 +1,7 @@
 %h1 Listing events
 
-%table
-  %tr
+%table.table.table-striped.table-hover
+  %thead
     %th Name
     %th Description
     %th Date
@@ -10,17 +10,18 @@
     %th
     %th
     %th
-
-  - @events.each do |event|
-    %tr
-      %td= event.name
-      %td= event.description
-      %td= event.date
-      %td= event.private
-      %td= event.finished
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.name
+        %td= event.description
+        %td= event.date
+        %td= event.private
+        %td= event.finished
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 

@@ -1,25 +1,41 @@
-= form_for @event do |f|
+= form_for @event, :html => {:class => "form-horizontal"} do |f|
   - if @event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :date
-    = f.date_select :date
-  .field
-    = f.label :private
-    = f.check_box :private
-  .field
-    = f.label :finished
-    = f.check_box :finished
+  .form-group        
+    .field
+      .col-lg-2.control-label
+        = f.label :name
+      .col-lg-10
+        = f.text_field :name
+  .form-group
+    .field
+      .col-lg-2.control-label
+        = f.label :description
+      .col-lg-10
+        = f.text_area :description
+  .form-group
+    .field
+      .col-lg-2.control-label
+        = f.label :date
+      .col-lg-10
+        = f.date_select :date
+  .form-group
+    .field
+      .col-lg-2.control-label
+        = f.label :private
+      .col-lg-10
+        = f.check_box :private
+  .form-group
+    .field
+      .col-lg-2.control-label
+        = f.label :finished
+      .col-lg-10
+        = f.check_box :finished
   .actions
-    = f.submit 'Save'
+    .col-lg-10.col-lg-offset-2
+      = f.button 'Reset', :type =>"reset", :html => {:class =>"btn btn-default" }
+      = f.submit 'Save', :html => {:class => "btn btn-primary"}
